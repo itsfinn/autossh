@@ -4,10 +4,6 @@ import (
 	"autossh/src/utils"
 	"errors"
 	"fmt"
-	"github.com/pkg/sftp"
-	"golang.org/x/crypto/ssh"
-	"golang.org/x/crypto/ssh/terminal"
-	"golang.org/x/net/proxy"
 	"io/ioutil"
 	"net"
 	"os"
@@ -16,6 +12,11 @@ import (
 	"strings"
 	"syscall"
 	"time"
+
+	"github.com/pkg/sftp"
+	"golang.org/x/crypto/ssh"
+	"golang.org/x/crypto/ssh/terminal"
+	"golang.org/x/net/proxy"
 )
 
 type Server struct {
@@ -30,6 +31,7 @@ type Server struct {
 	Alias    string                 `json:"alias"`
 	Log      ServerLog              `json:"log"`
 
+	term       string
 	termWidth  int
 	termHeight int
 	groupName  string
@@ -192,10 +194,13 @@ func (server *Server) Connect() error {
 	}
 
 	server.termWidth, server.termHeight, _ = terminal.GetSize(fd)
-	termType := os.Getenv("TERM")
-	if termType == "" {
-		termType = "xterm-256color"
+	termType := "xterm-256color"
+	if server.term != "" {
+		termType = server.term
+	} else if term := os.Getenv("TERM"); term != "" {
+		termType = term
 	}
+
 	if err := session.RequestPty(termType, server.termHeight, server.termWidth, modes); err != nil {
 		return errors.New("创建终端出错:" + err.Error())
 	}
