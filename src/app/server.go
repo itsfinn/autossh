@@ -30,8 +30,8 @@ type Server struct {
 	Options  map[string]interface{} `json:"options"`
 	Alias    string                 `json:"alias"`
 	Log      ServerLog              `json:"log"`
-
-	term       string
+	Term     string                 `json:"term"`
+	
 	termWidth  int
 	termHeight int
 	groupName  string
@@ -195,8 +195,8 @@ func (server *Server) Connect() error {
 
 	server.termWidth, server.termHeight, _ = terminal.GetSize(fd)
 	termType := "xterm-256color"
-	if server.term != "" {
-		termType = server.term
+	if server.Term != "" {
+		termType = server.Term
 	} else if term := os.Getenv("TERM"); term != "" {
 		termType = term
 	}
