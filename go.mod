@@ -1,4 +1,4 @@
-module github.com/islenbo/autossh
+module github.com/itsfinn/autossh
 
 go 1.12
 
