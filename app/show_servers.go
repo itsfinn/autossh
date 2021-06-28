@@ -1,8 +1,9 @@
 package app
 
 import (
-	"autossh/src/utils"
 	"strconv"
+
+	"github.com/itsfinn/autossh/utils"
 )
 
 func showServers(configFile string) {

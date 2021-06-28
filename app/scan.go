@@ -1,8 +1,9 @@
 package app
 
 import (
-	"autossh/src/utils"
 	"strings"
+
+	"github.com/itsfinn/autossh/utils"
 )
 
 const (

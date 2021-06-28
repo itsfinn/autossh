@@ -1,7 +1,7 @@
 package app
 
 import (
-	"autossh/src/utils"
+	"github.com/itsfinn/autossh/utils"
 )
 
 func showVersion() {

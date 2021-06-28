@@ -1,9 +1,10 @@
 package app
 
 import (
-	"autossh/src/utils"
 	"fmt"
 	"io"
+
+	"github.com/itsfinn/autossh/utils"
 )
 
 func handleAdd(cfg *Config, _ []string) error {

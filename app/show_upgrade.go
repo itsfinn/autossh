@@ -2,10 +2,8 @@ package app
 
 import (
 	"archive/zip"
-	"autossh/src/utils"
 	"encoding/json"
 	"fmt"
-	"github.com/pkg/errors"
 	"io"
 	"io/ioutil"
 	"net/http"
@@ -18,6 +16,9 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/itsfinn/autossh/utils"
+	"github.com/pkg/errors"
 )
 
 type Upgrade struct {

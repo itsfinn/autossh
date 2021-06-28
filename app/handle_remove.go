@@ -1,9 +1,10 @@
 package app
 
 import (
-	"autossh/src/utils"
 	"fmt"
 	"io"
+
+	"github.com/itsfinn/autossh/utils"
 )
 
 func handleRemove(cfg *Config, args []string) error {

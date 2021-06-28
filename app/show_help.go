@@ -1,8 +1,9 @@
 package app
 
 import (
-	"autossh/src/utils"
 	"flag"
+
+	"github.com/itsfinn/autossh/utils"
 )
 
 func showHelp() {

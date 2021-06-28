@@ -1,11 +1,8 @@
 package app
 
 import (
-	"autossh/src/utils"
 	"flag"
 	"fmt"
-	"github.com/pkg/errors"
-	"github.com/pkg/sftp"
 	"io"
 	"os"
 	"path"
@@ -14,6 +11,10 @@ import (
 	"syscall"
 	"time"
 	"unsafe"
+
+	"github.com/itsfinn/autossh/utils"
+	"github.com/pkg/errors"
+	"github.com/pkg/sftp"
 )
 
 type ResType int

@@ -1,11 +1,12 @@
 package app
 
 import (
-	"autossh/src/utils"
 	"fmt"
 	"io"
 	"reflect"
 	"strconv"
+
+	"github.com/itsfinn/autossh/utils"
 )
 
 // 编辑

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"autossh/src/app"
+	"github.com/itsfinn/autossh/app"
 )
 
 var (

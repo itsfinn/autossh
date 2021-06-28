@@ -1,7 +1,6 @@
 package app
 
 import (
-	"autossh/src/utils"
 	"bytes"
 	"encoding/json"
 	"io"
@@ -10,6 +9,8 @@ import (
 	"path/filepath"
 	"strconv"
 	"time"
+
+	"github.com/itsfinn/autossh/utils"
 )
 
 type Config struct {

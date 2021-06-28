@@ -1,10 +1,11 @@
 package app
 
 import (
-	"autossh/src/utils"
 	"encoding/json"
-	"github.com/pkg/errors"
 	"io/ioutil"
+
+	"github.com/itsfinn/autossh/utils"
+	"github.com/pkg/errors"
 )
 
 // 加载配置

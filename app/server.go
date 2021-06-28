@@ -1,7 +1,6 @@
 package app
 
 import (
-	"autossh/src/utils"
 	"errors"
 	"fmt"
 	"io/ioutil"
@@ -12,6 +11,8 @@ import (
 	"strings"
 	"syscall"
 	"time"
+
+	"github.com/itsfinn/autossh/utils"
 
 	"github.com/pkg/sftp"
 	"golang.org/x/crypto/ssh"
@@ -31,7 +32,7 @@ type Server struct {
 	Alias    string                 `json:"alias"`
 	Log      ServerLog              `json:"log"`
 	Term     string                 `json:"term"`
-	
+
 	termWidth  int
 	termHeight int
 	groupName  string
