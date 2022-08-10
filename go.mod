@@ -1,6 +1,6 @@
 module github.com/itsfinn/autossh
 
-go 1.12
+go 1.17
 
 require (
 	github.com/kr/fs v0.1.0 // indirect
