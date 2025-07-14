@@ -15,8 +15,3 @@ require (
         golang.org/x/sys v0.0.0-20190509141414-a5b02f93d862 // indirect
 )
 
-replace (
-        golang.org/x/crypto => github.com/golang/crypto v0.0.0-20190701094942-4def268fd1a4
-        golang.org/x/net => github.com/golang/net v0.0.0-20190813141303-74dc4d7220e7
-        golang.org/x/sys => github.com/golang/sys v0.0.0-20190813064441-fde4db37ae7a
-)
