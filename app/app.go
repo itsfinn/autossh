@@ -18,9 +18,12 @@ var (
 )
 
 func init() {
-	// 取执行文件所在目录下的config.json
-	dir, _ := os.Executable()
-	c = filepath.Dir(dir) + "/config.json"
+	// 默认从用户home目录的.autossh/config.json读取
+	home, err := os.UserHomeDir()
+	if err != nil {
+		home = "." // 如果获取失败，使用当前目录
+	}
+	c = filepath.Join(home, ".autossh", "config.json")
 
 	flag.StringVar(&c, "c", c, "指定配置文件路径")
 	flag.StringVar(&c, "config", c, "指定配置文件路径")
